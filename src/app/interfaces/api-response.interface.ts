@@ -3,11 +3,11 @@ export interface APIResponse {
     per_page:    number;
     total:       number;
     total_pages: number;
-    data:        Data[];
+    data:        User[];
     support:     Support;
 }
 
-export interface Data {
+export interface User {
     id:         number;
     email:      string;
     first_name: string;

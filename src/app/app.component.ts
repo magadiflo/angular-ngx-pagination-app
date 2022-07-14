@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { APIResponse } from './interfaces/api-response.interface';
+import { APIResponse, User } from './interfaces/api-response.interface';
 import { UsersService } from './services/users.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { UsersService } from './services/users.service';
 })
 export class AppComponent implements OnInit {
 
-  users: any;
+  users: User[] = [];
   pageNumber: number = 1;
   total: number = 0;
 
