@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { APIResponse } from '../interfaces/api-response.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +13,8 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(pageNumber: number) {
-    return this.http.get(`${this.url}?page=${pageNumber}`);
+  getUsers(pageNumber: number): Observable<APIResponse> {
+    return this.http.get<APIResponse>(`${this.url}?page=${pageNumber}`);
   }
 
 }
