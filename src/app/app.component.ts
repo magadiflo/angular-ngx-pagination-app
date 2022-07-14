@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   users: User[] = [];
   pageNumber: number = 1;
+  itemsPerPage: number = 2;
   total: number = 0;
 
   constructor(private usersService: UsersService) { }
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   getUsers(): void {
-    this.usersService.getUsers(this.pageNumber)
+    this.usersService.getUsers(this.pageNumber, this.itemsPerPage)
       .subscribe((response: APIResponse) => {
         this.users = response.data;
         this.total = response.total;

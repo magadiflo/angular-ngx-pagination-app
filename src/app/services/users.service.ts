@@ -13,8 +13,8 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  getUsers(pageNumber: number): Observable<APIResponse> {
-    return this.http.get<APIResponse>(`${this.url}?page=${pageNumber}`);
+  getUsers(pageNumber: number, itemsPerPage: number = 5): Observable<APIResponse> {
+    return this.http.get<APIResponse>(`${this.url}?page=${pageNumber}&per_page=${itemsPerPage}`);
   }
 
 }
